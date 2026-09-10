@@ -5,7 +5,10 @@
 patient_name, practitioner_name, appointment_time
 
 ## **What Functions might be useful?**
-If-else statements, dictionaries, lists, functions
+- book_appointment()
+- display_appointments()
+- reschedule_appointment()
+
 
 ## **What could go wrong?**
 - Two patients could book the same appointment time
@@ -32,7 +35,7 @@ If-else statements, dictionaries, lists, functions
 | Easy to Understand? | Yes, uses simple code | Yes, prioritizes a clear structure |
 | Uses Only Required Features? | Yes, uses dictionaries, lists, and functions | Yes uses requirements but also adds extra elements such as loops |
 | Adds Assumptions? | Assumes all appointments and data entered is correct and of the right type | Assumes all appointments and data entered is correct and of the right type |
-| Handles Errors? | No, handles no error checking | Yes, handles some error checking such as empty inputs |
+| Handles Errors? | Only handles empty inputs for patient name | Yes, handles some error checking such as empty inputs for all variables|
 | Could I explain it? | Yes, the human version is constructed simply and easy to interpret | Yes, uses more features but its more concise |
 
 # Verify Behaviour

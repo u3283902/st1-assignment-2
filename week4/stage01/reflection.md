@@ -1,21 +1,21 @@
 
 # Improve One Thing (Part G)
-The *Human Version* only validates empty value for the patient, other strange values such as numbers and symbols don't create errors. This is what I'll be updating in my new version.
+The *Human Version* doesn't check for existing conflicting appointments before booking new appointments. Therefore, this is what I'll be updating.
 
 See smartcare_v01.py
 
 # Reflection (Part H)
 ## **What did you build before AI?**
-Before AI, I added ValueErrors to the practitioner name and appointment date so that no values could be empty. I also started adding validations to each of the input variables so that strange values cannot be assigned to patient or practitioner names, however I did not make this change to appointment time since it needs numeric and symbolic values. I also started to add user inputs to the system so that users can easily add and manage appointments, but this was not a necessary update.
+Before using AI, I already had the initial task1enhanced as a prototype. I expanded on the ValueError for patient name and added the same error to practitioner name and appointment time so that no values can be empty.
 
 ## **What did AI help you understand?**
-After creating a base for the program, AI help me use some built-in Python functions such as .isalpha(), which allowed me to ensure the patient and practitioner names could not be assignemed with strange values such as numbers and letters.
+AI helped me understand how to use the 'existing' term within a loop to compare new appointments against pre-existing appointments. 
 
 ## **Did AI assume anything?**
-AI assumed I would need to use a loop in order to get properly book and then view appointments made within the system. AI also assumed that the .isalpha() was best to use in order to validate only inputs with letters even though some names tend to use spaces, hyphens, or apostrophes.
+When initially told to improve one thing, AI assumed that the system needed a much bigger rebuild rather than a single small change.
 
-## **How did you verify the AI output?"**
-I verified the AI output by running the program many times using different inputs including letters, numbers, and null values to ensure each input was properly validated.
+## **How did you verify the AI output?**
+I tested to make sure the for loop worked by trying to book 2 patients with the same practitioner name and appointment time, which successfully raised an error. I then also tested 2 different practitioner names and appointment times to ensure different appointments were still able to be booked. I then tested blank inputs to ensure appointments can only be booked if all fields have a value.
 
-## **What engineering work remained for you?"**
-After using AI, I went back through the loops AI had recommended and ensured all the logic was correct, as well as adding further logic such as the .lower() function and break function so that the user can quit the program.
+## **What engineering work remained for you?**
+Within the loop I had to ensure that the loop compared both practitioner name and appointment time together rather than seperately so that the same practitioner can not have multiple appointments at the same time.

@@ -29,9 +29,11 @@ Add validation rules to ensure names, dates, and times are valid and not empty.
 Add conflict detection to prevent double‑booking practitioners or time slots.
 
 ## **4. Questions to Test Understanding**
-Why is each appointment stored as a dictionary instead of separate variables?
+**Why is each appointment stored as a dictionary instead of separate variables?**
+Each appointment is stored as a dictionary so that related data is stored together rather than jumbled. This makes it easy to store and find each appointment record as the data is all in one place.
 
-Why does the display_appointments() function use a loop to print the stored appointments?
+**Why does the display_appointments() function use a loop to print the stored appointments?**
+Using a loop allows a statement to be printed for all appointments regardless of how many there are, whereas manually you'd have to write a print statement for each individual appointment.
 
 # AI SmartCare Code:
 appointments = []

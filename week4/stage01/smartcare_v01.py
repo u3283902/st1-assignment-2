@@ -12,6 +12,11 @@ def book_appointment (patient_name, practitioner_name, appointment_time):
         raise ValueError("Practitioner name cannot be empty")
     if not appointment_time:
         raise ValueError("Appointment time cannot be empty")
+
+# Improvement: Check for existing conflicting appointment and raise an error
+    for existing in appointments:
+        if existing["practitioner"] == practitioner_name and existing["time"] == appointment_time:
+            raise ValueError("This practitioner is already booked at this time.")
     
     appointment = {
         "patient": patient_name,
@@ -27,34 +32,9 @@ def display_appointments():
     for appointment in appointments:
         print(f"Patient: {appointment['patient']} | Practitioner: {appointment['practitioner']} | Time: {appointment['time']}")
 
-# Terminal Interface (added loop and if-else statements)
 print("Welcome to SmartCare: The Clinical Appointment Booking System!")
-
-while True:
-    action = input("Please Enter 'B' to book, 'V' to view bookings, or 'Q' to quit: ").lower()
-
-    if action == "b":
-        patient_name = input("Enter Patient's Name: ")
-        if not patient_name.isalpha():
-            print("Names must only contain letters")
-            continue
-        practitioner_name = input("Enter Practitioner's Name: ")
-        if not practitioner_name.isalpha():
-            print("Names must only contain letters")
-            continue
-        appointment_time = input("Enter Appointment Time: ")
-
-        book_appointment(patient_name, practitioner_name, appointment_time)
-        print("Appointment booked!")
-
-    elif action == "v":
-        display_appointments()
-
-    elif action == "q":
-        print("Goodbye!")
-        break
-
-    else:
-        print("Invalid option. Please try again.")
-
-# Now the program is able to take user inputs and validates all inputs so that strange values cannot occur for patient names and practitioner names
+book_appointment('Alice Smith', 'Dr. John Doe', '2024-07-20 10:00 AM')
+book_appointment('Bob Johnson', 'Dr. Jane Roe', '2024-07-20 11:30 AM')
+# Error Example: book_appointment('Bob Johnson', 'Dr. John Doe', '2024-07-20 10:00 AM')
+# Error Example: book_appointment('', '', '')
+display_appointments()
