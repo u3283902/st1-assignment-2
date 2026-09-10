@@ -1,5 +1,16 @@
 
 # SmartCare Appointment System — Part C (AI Tutor Response)
+**Tool used:** Microsoft Copilot (UC-approved GenAI tool)
+
+**Prompt used:** Act as a Python tutor.
+I am learning introductory software technology.
+Here is a small appointment-booking function.
+1. Explain what the code does.
+2. Identify three limitations.
+3. Suggest improvements.
+4. Do not rewrite the whole application.
+5. Ask me two questions to test my understanding.
+
 ## **1. Code Explanation**
 The script begins by printing a welcome message and displaying two hard‑coded appointments using simple variables.
 
