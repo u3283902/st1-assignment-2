@@ -1,0 +1,7 @@
+
+# Reflection
+The part of Copilot's code I changed the most was how Appointment linked to Patient and Practitioner. The generated version stored their names as plain text instead of linking to the actual objects, which didn't match the relationships shown in my UML diagram. It also meant two patients with the same name could get mixed up, which is exactly why I chose to use unique IDs back in my Part B/C classes instead of names. I also removed the search_patient() method Copilot added, since that wasn't listed as an Appointment operation in the UML, and searching by name was already something Patient was responsible for based on my CRC cards from an earlier stage.
+
+Copilot also made is_conflicting() private and kept a shared list of every appointment ever created inside the class itself, with no way to reset it. Neither of these were shown anywhere in my approved design, so I removed them and rewrote the class to only store appointments through the patient's and practitioner's own appointment lists.
+
+Overall, having an approved UML and a set of business rules already confirmed made it much easier to review Copilot's code properly, rather than just accepting it because it looked reasonable. Instead of judging the code on its own, I could check it directly against decisions I had already made and justified earlier in the project, which made it obvious pretty quickly where it had drifted from the design.
